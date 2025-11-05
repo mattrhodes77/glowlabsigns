@@ -612,6 +612,35 @@
             min-height: 120px;
         }
 
+        .form-group input[type="file"] {
+            padding: 0.8rem;
+            background: rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+        }
+
+        .form-group input[type="file"]::file-selector-button {
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input[type="file"]::file-selector-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 119, 255, 0.4);
+        }
+
+        .file-upload-hint {
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -949,7 +978,7 @@
                 <img src="photos/GlowLabSigns_Bar_A.jpg" alt="Custom LED A sign in upscale bar setting" loading="lazy">
                 <div class="gallery-photo-caption">
                     <strong>Upscale Bar Installation</strong>
-                    Custom letter sign with premium RGB lighting (Rendering for Upcoming Project)
+                    Custom letter sign with premium RGB lighting<br><em>(Rendering for upcoming project)</em>
                 </div>
             </div>
 
@@ -957,15 +986,7 @@
                 <img src="photos/GlowLabSigns_MOCK_Restaurant_CENA.jpg" alt="Restaurant LED sign visualization" loading="lazy">
                 <div class="gallery-photo-caption">
                     <strong>Restaurant Concept - CENA</strong>
-                    Design visualization for upscale dining establishment (Rendering for Upcoming Project)
-                </div>
-            </div>
-
-            <div class="gallery-photo">
-                <img src="photos/GlowLabSigns_MOCK_Cafe_BREATHE_1.jpg" alt="Wellness cafe LED neon sign" loading="lazy">
-                <div class="gallery-photo-caption">
-                    <strong>Cafe Concept - BREATHE</strong>
-                    Teal neon LED for wellness and lifestyle spaces (Rendering for Upcoming Project)
+                    Design visualization for upscale dining establishment<br><em>(Rendering for upcoming project)</em>
                 </div>
             </div>
 
@@ -973,7 +994,15 @@
                 <img src="photos/GlowLabSIgns_Tahoe_6x6_blue_daytime.jpg" alt="Large script R LED sign on cathedral ceiling" loading="lazy">
                 <div class="gallery-photo-caption">
                     <strong>Tahoe Ski Home Installation</strong>
-                    Installed on 15ft cathedral ceiling, full RGB spectrum control
+                    6' x 6' sign mounted at ~20'; full RGB
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/GlowLabSigns_MOCK_Cafe_BREATHE_1.jpg" alt="Wellness cafe LED neon sign" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Cafe Concept - BREATHE</strong>
+                    Inject creativity into wellness and lifestyle spaces<br><em>(Rendering for upcoming project)</em>
                 </div>
             </div>
 
@@ -1031,7 +1060,7 @@
                 <div class="timeline-content">
                     <h3>Custom Fabrication</h3>
                     <p>Premium fabrication partners craft your sign to exact specifications using commercial-grade materials.</p>
-                    <span class="timeline-duration">4-6 weeks</span>
+                    <span class="timeline-duration">2-3 weeks</span>
                 </div>
             </div>
 
@@ -1040,7 +1069,7 @@
                 <div class="timeline-content">
                     <h3>Shipping & Logistics</h3>
                     <p>Secure packaging and tracked shipping directly to your location. White-glove handling throughout.</p>
-                    <span class="timeline-duration">2-3 weeks</span>
+                    <span class="timeline-duration">4-6 weeks</span>
                 </div>
             </div>
 
@@ -1049,7 +1078,7 @@
                 <div class="timeline-content">
                     <h3>Expert Installation</h3>
                     <p>Licensed electricians and professional installers handle mounting, wiring, and permits. Custom installation completed with precision.</p>
-                    <span class="timeline-duration">1 day</span>
+                    <span class="timeline-duration">1-2 days</span>
                 </div>
             </div>
         </div>
@@ -1127,7 +1156,7 @@
 
         <div class="process-note" style="margin-top: 3rem;">
             <p><strong>Installation Included:</strong> All packages include professional installation for standard setups (drywall mount, under 20 ft, existing electrical in wall).</p>
-            <p style="margin-top: 0.5rem;">Advanced installations (vaulted ceilings, outdoor mounting, complex electrical) may incur additional charges. <a href="#quote" style="color: #00d4ff; text-decoration: none;">Contact us</a> for specific requirements.</p>
+            <p style="margin-top: 0.5rem;">Advanced installations (brick/concrete wall, scaffolding required, complex electrical, etc.) may incur additional charges. <a href="#quote" style="color: #00d4ff; text-decoration: none;">Contact us</a> for specific requirements.</p>
         </div>
     </section>
 
@@ -1137,7 +1166,7 @@
             <h2 class="section-title">Get Your Custom Quote</h2>
             <p class="section-subtitle">We'll respond within 24 hours</p>
 
-            <form action="https://formspree.io/f/xanlrywq" method="POST" class="builder-form" id="quoteForm">
+            <form action="https://formspree.io/f/xanlrywq" method="POST" enctype="multipart/form-data" class="builder-form" id="quoteForm">
                 <div class="form-group">
                     <label for="signText">1. What text or design do you want? <span style="color: #888; font-size: 0.9rem;">(Max 10 characters)</span></label>
                     <input type="text" id="signText" name="sign_text" placeholder="e.g., Your name, business name..." maxlength="10" required>
@@ -1156,6 +1185,7 @@
                         <option value="playfair">Classic Serif (Playfair Display)</option>
                         <option value="righteous">Retro Bold (Righteous)</option>
                     </select>
+                    <p class="file-upload-hint">(Illustrative: Custom design will be tweaked to align with technical requirements, subject to your approval)</p>
                 </div>
 
                 <!-- Live Preview -->
@@ -1181,7 +1211,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label>5. Your contact information</label>
+                    <label for="spacePhoto">5. Upload a photo of your space (optional)</label>
+                    <input type="file" id="spacePhoto" name="space_photo" accept="image/*">
+                    <p class="file-upload-hint">Help us visualize your space. JPG, PNG, or HEIC (max 10MB)</p>
+                </div>
+
+                <div class="form-group">
+                    <label>6. Your contact information</label>
                     <div class="form-row">
                         <input type="text" name="name" placeholder="Full name" required>
                         <input type="email" name="email" placeholder="Email address" required>

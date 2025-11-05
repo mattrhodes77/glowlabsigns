@@ -45,12 +45,14 @@
         }
 
         .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #00d4ff, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 100%;
+            width: auto;
         }
 
         .nav-links {
@@ -752,7 +754,9 @@
     <!-- Sticky Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="nav-logo">Glow Lab Signs</div>
+            <div class="nav-logo">
+                <img src="photos/GlowLabSigns_LOGO_Transparent.png" alt="Glow Lab Signs">
+            </div>
             <ul class="nav-links">
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#process">Process</a></li>
@@ -842,6 +846,14 @@
                 <div class="gallery-photo-caption">
                     <strong>Restaurant Concept - CENA</strong>
                     Design visualization for upscale dining establishment
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/GlowLabSigns_MOCK_Cafe_BREATHE_1.jpg" alt="Wellness cafe LED neon sign" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Cafe Concept - BREATHE</strong>
+                    Teal neon LED for wellness and lifestyle spaces
                 </div>
             </div>
 

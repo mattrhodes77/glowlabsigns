@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Locations | Custom LED Signs Tahoe & Nationwide | Glow Lab Signs</title>
+    <meta name="description" content="Expert LED sign installation in Lake Tahoe, Truckee, Incline Village, Martis Camp, and nationwide. Based in Truckee, CA with experienced local installers serving the entire Tahoe basin.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a0a0a;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .header-logo {
+            max-width: 300px;
+            height: auto;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        .header h1 {
+            color: #fff;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00d4ff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: #b0b0b0;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #0077ff;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            color: #00d4ff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .section-text {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Tahoe Hero Section */
+        .tahoe-hero {
+            background: linear-gradient(135deg, rgba(0, 119, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .tahoe-hero h2 {
+            color: #00d4ff;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .tahoe-hero .subtitle {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .tahoe-hero p {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Locations Grid */
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .location-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .location-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.2);
+        }
+
+        .location-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .location-card h3 {
+            color: #00d4ff;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .location-card p {
+            color: #b0b0b0;
+            font-size: 1rem;
+        }
+
+        .location-card.home-base {
+            border-color: #00d4ff;
+            border-width: 2px;
+            position: relative;
+        }
+
+        .home-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #fff;
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* Nationwide Section */
+        .nationwide-section {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+        }
+
+        .nationwide-section h2 {
+            color: #00d4ff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .nationwide-section p {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .nationwide-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-box {
+            background: rgba(0, 119, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .feature-box h3 {
+            color: #00d4ff;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-box p {
+            color: #b0b0b0;
+            font-size: 1.05rem;
+            text-align: left;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 119, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .cta-section h2 {
+            color: #fff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 119, 255, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 119, 255, 0.2);
+        }
+
+        footer p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .footer-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #0077ff;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .tahoe-hero {
+                padding: 2rem;
+            }
+
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <img src="photos/GlowLabSigns_LOGO_Transparent_TIGHT.png" alt="Glow Lab Signs" class="header-logo">
+        <h1>Service Locations</h1>
+        <p>Expert LED sign installation across Lake Tahoe and nationwide</p>
+        <a href="index.html" class="back-link">← Back to Main Site</a>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Tahoe Hero -->
+        <div class="tahoe-hero">
+            <h2>🏔️ Home Base: Lake Tahoe</h2>
+            <p class="subtitle">Experienced Installers Serving the Entire Tahoe Basin</p>
+            <p>Based in Truckee, California, we're proud to be your local experts for custom LED sign design and installation throughout the Lake Tahoe region. Our team knows the unique requirements of high-altitude installations, mountain architecture, and the luxury aesthetic that defines Tahoe living.</p>
+        </div>
+
+        <!-- Tahoe Locations Section -->
+        <section class="section">
+            <h2 class="section-title">Lake Tahoe Area We Serve</h2>
+            <p class="section-text">From luxury mountain estates to upscale restaurants and retail spaces, we provide expert custom LED sign installation throughout the Tahoe basin.</p>
+
+            <div class="locations-grid">
+                <div class="location-card home-base">
+                    <div class="home-badge">Home Base</div>
+                    <div class="icon">🏡</div>
+                    <h3>Truckee, CA</h3>
+                    <p>Our home base and main office serving the greater Truckee area</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon">🏔️</div>
+                    <h3>Lake Tahoe</h3>
+                    <p>Custom installations around the entire Tahoe basin</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon">⛷️</div>
+                    <h3>Incline Village</h3>
+                    <p>Luxury estates and upscale commercial properties</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon">🎿</div>
+                    <h3>South Lake Tahoe</h3>
+                    <p>Restaurants, bars, and retail installations</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon">🌲</div>
+                    <h3>Tahoe City</h3>
+                    <p>West shore installations and commercial projects</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon">⛳</div>
+                    <h3>Martis Camp</h3>
+                    <p>Premium residential installations in exclusive communities</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon">🏌️</div>
+                    <h3>Gray's Crossing</h3>
+                    <p>Custom signs for luxury mountain homes</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="icon">🌊</div>
+                    <h3>Zephyr Cove</h3>
+                    <p>Nevada side installations and lakefront properties</p>
+                </div>
+            </div>
+
+            <p class="section-text" style="margin-top: 3rem;">We also serve all surrounding Tahoe communities including Northstar, Alpine Meadows, Squaw Valley, Kings Beach, Carnelian Bay, Homewood, Tahoma, Meeks Bay, Emerald Bay, and everywhere in between.</p>
+        </section>
+
+        <!-- Nationwide Section -->
+        <div class="nationwide-section">
+            <h2>🇺🇸 Nationwide Installation Network</h2>
+            <p>While Lake Tahoe is our home, we bring our expertise to clients across the United States through our trusted network of professional installation partners.</p>
+
+            <div class="nationwide-features">
+                <div class="feature-box">
+                    <h3>Professional Partner Network</h3>
+                    <p>We work with licensed electricians and professional installers nationwide to ensure your custom LED sign installation meets the same high standards we maintain in Tahoe.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>Your Preferred Vendors Welcome</h3>
+                    <p>Already have trusted contractors or electricians? We're happy to collaborate with your preferred vendors to coordinate the installation seamlessly.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h3>White-Glove Coordination</h3>
+                    <p>Whether we're working with our partners or yours, we manage all technical specifications, permitting guidance, and installation coordination from start to finish.</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 3rem;">From coast to coast, we've completed installations in luxury homes, upscale restaurants, boutique hotels, and commercial spaces nationwide.</p>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Ready to Transform Your Space?</h2>
+            <p>Whether you're in Lake Tahoe or anywhere across the country, we're ready to create your custom LED sign installation.</p>
+            <a href="index.html#quote" class="cta-button">Get Your Custom Quote</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Glow Lab Signs. All rights reserved.</p>
+        <p>Based in Truckee, CA • Serving Lake Tahoe & Nationwide</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="designers.html">Designer Partners</a>
+            <a href="mailto:hello@glowlabsigns.com">Contact</a>
+            <a href="https://instagram.com/glowlabsigns" target="_blank">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

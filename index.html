@@ -90,9 +90,19 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-container {
+                flex-direction: column;
                 gap: 1rem;
+            }
+
+            .nav-logo {
+                height: 40px;
+            }
+
+            .nav-links {
+                gap: 0.8rem;
                 flex-wrap: wrap;
+                justify-content: center;
             }
 
             .nav-links a {
@@ -651,6 +661,25 @@
             .form-row {
                 grid-template-columns: 1fr;
             }
+
+            .builder {
+                padding: 4rem 0.5rem;
+            }
+
+            .builder-container {
+                max-width: 100%;
+                padding: 0 0.5rem;
+            }
+
+            .builder-form {
+                padding: 2rem 1rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
         }
 
         .submit-button {
@@ -902,6 +931,7 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#pricing">Pricing</a></li>
+                <li><a href="locations.html">Locations</a></li>
                 <li><a href="#quote" class="nav-cta">Get Quote</a></li>
             </ul>
         </div>
@@ -910,7 +940,7 @@
     <!-- Hero Section - Full Screen Photo -->
     <section class="hero">
         <div class="hero-background">
-            <img src="photos/GlowLabSigns_Bar_A.jpg" alt="Custom RGB LED sign installation in upscale bar">
+            <img src="photos/GlowLabSigns_MOCK_Green_A_Bar.jpg" alt="Custom RGB LED sign installation in upscale bar">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -975,7 +1005,7 @@
 
         <div class="masonry-gallery">
             <div class="gallery-photo">
-                <img src="photos/GlowLabSigns_Bar_A.jpg" alt="Custom LED A sign in upscale bar setting" loading="lazy">
+                <img src="photos/GlowLabSigns_MOCK_Green_A_Bar.jpg" alt="Custom LED A sign in upscale bar setting" loading="lazy">
                 <div class="gallery-photo-caption">
                     <strong>Upscale Bar Installation</strong>
                     Custom letter sign with premium RGB lighting<br><em>(Rendering for upcoming project)</em>
@@ -1023,7 +1053,7 @@
             </div>
 
             <div class="gallery-photo">
-                <img src="photos/GlowLabSigns_mock_club_R.jpg" alt="Concept rendering of R sign in upscale bar setting" loading="lazy">
+                <img src="photos/GlowLabSigns_MOCK_Red_X_Lounge.jpg" alt="Concept rendering of X sign in upscale lounge setting" loading="lazy">
                 <div class="gallery-photo-caption">
                     <strong>Design Visualization</strong>
                     See your custom sign in your space before fabrication
@@ -1374,6 +1404,7 @@
         <p>Premium fabrication • Expert design • Professional installation nationwide • Based in Truckee, CA</p>
         <div class="footer-links">
             <a href="#quote">Get Quote</a>
+            <a href="locations.html">Locations</a>
             <a href="mailto:hello@glowlabsigns.com">hello@glowlabsigns.com</a>
             <a href="tel:+15304274058">(530) 427-4058</a>
             <a href="https://instagram.com/glowlabsigns" target="_blank">Instagram</a>

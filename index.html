@@ -612,6 +612,35 @@
             min-height: 120px;
         }
 
+        .form-group input[type="file"] {
+            padding: 0.8rem;
+            background: rgba(0, 0, 0, 0.7);
+            cursor: pointer;
+        }
+
+        .form-group input[type="file"]::file-selector-button {
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input[type="file"]::file-selector-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 119, 255, 0.4);
+        }
+
+        .file-upload-hint {
+            color: #888;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1137,7 +1166,7 @@
             <h2 class="section-title">Get Your Custom Quote</h2>
             <p class="section-subtitle">We'll respond within 24 hours</p>
 
-            <form action="https://formspree.io/f/xanlrywq" method="POST" class="builder-form" id="quoteForm">
+            <form action="https://formspree.io/f/xanlrywq" method="POST" enctype="multipart/form-data" class="builder-form" id="quoteForm">
                 <div class="form-group">
                     <label for="signText">1. What text or design do you want? <span style="color: #888; font-size: 0.9rem;">(Max 10 characters)</span></label>
                     <input type="text" id="signText" name="sign_text" placeholder="e.g., Your name, business name..." maxlength="10" required>
@@ -1181,7 +1210,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label>5. Your contact information</label>
+                    <label for="spacePhoto">5. Upload a photo of your space (optional)</label>
+                    <input type="file" id="spacePhoto" name="space_photo" accept="image/*">
+                    <p class="file-upload-hint">Help us visualize your space. JPG, PNG, or HEIC (max 10MB)</p>
+                </div>
+
+                <div class="form-group">
+                    <label>6. Your contact information</label>
                     <div class="form-row">
                         <input type="text" name="name" placeholder="Full name" required>
                         <input type="email" name="email" placeholder="Email address" required>

@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Lab Signs | Custom LED Signs Nationwide</title>
+    <meta name="description" content="Custom RGB LED signs designed and professionally installed nationwide. Premium illuminated signage for businesses and luxury homes. Based in Truckee, CA.">
+    <meta name="description" content="Premium custom LED signs for businesses and homes. Starting at $4k. Professional installation included.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a0a0a;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(0, 119, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(255, 0, 170, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 30px rgba(0, 119, 255, 0.5);
+            background: linear-gradient(135deg, #00d4ff, #0077ff, #ff00aa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: #b0b0b0;
+            margin-bottom: 3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 119, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.5);
+        }
+
+        /* Photo Gallery Hero Section - NEW */
+        .gallery-hero {
+            padding: 6rem 2rem 4rem;
+            background: #0a0a0a;
+        }
+
+        .gallery-hero h2 {
+            text-align: center;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #fff;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gallery-hero p {
+            text-align: center;
+            color: #888;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .masonry-gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            columns: 3;
+            column-gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .masonry-gallery {
+                columns: 2;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .masonry-gallery {
+                columns: 1;
+            }
+        }
+
+        .gallery-photo {
+            break-inside: avoid;
+            margin-bottom: 2rem;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #1a1a2e;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-photo:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            background: #1a1a2e; /* Fallback while loading */
+        }
+
+        .gallery-photo-caption {
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        .gallery-photo-caption strong {
+            display: block;
+            color: #00d4ff;
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+
+        /* Product Proof Section */
+        .product-proof {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+        }
+
+        .proof-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 968px) {
+            .proof-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .proof-text h2 {
+            color: #fff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .proof-text > p {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .proof-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .proof-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
+
+        .proof-check {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            border-radius: 50%;
+            color: #000;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .proof-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(0, 119, 255, 0.4);
+            border: 3px solid rgba(0, 212, 255, 0.5);
+            background: #1a1a2e; /* Fallback */
+        }
+
+        .proof-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .proof-badge {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            box-shadow: 0 10px 30px rgba(0, 119, 255, 0.6);
+            animation: pulseBadge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseBadge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: #0f0f0f;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #fff;
+            margin-bottom: 4rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 119, 255, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            color: #00d4ff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        /* Interactive Builder Section */
+        .builder {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #0a0a0a 0%, #16213e 100%);
+        }
+
+        .builder-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .builder-title {
+            text-align: center;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #fff;
+            margin-bottom: 1rem;
+        }
+
+        .builder-subtitle {
+            text-align: center;
+            color: #888;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+        }
+
+        .builder-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 968px) {
+            .builder-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Venue Visualizer */
+        .venue-visualizer {
+            position: relative;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .venue-tabs {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            z-index: 10;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 0.6rem 1.2rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab-button:hover,
+        .tab-button.active {
+            background: rgba(0, 119, 255, 0.3);
+            border-color: #00d4ff;
+            transform: translateY(-2px);
+        }
+
+        .venue-background {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .venue-background.home {
+            background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1e 100%);
+        }
+
+        .venue-background.bar {
+            background: linear-gradient(180deg, #2a1a1a 0%, #1a0a0a 100%);
+        }
+
+        .venue-background.restaurant {
+            background: linear-gradient(180deg, #1a2a1a 0%, #0a1a0a 100%);
+        }
+
+        .venue-background.storefront {
+            background: linear-gradient(180deg, #2a2a3a 0%, #1a1a2a 100%);
+        }
+
+        #signContainer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+        }
+
+        #signGlow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        #signBorder {
+            position: relative;
+            display: inline-block;
+            padding: 1rem 1.5rem;
+            background: rgba(0, 0, 0, 0.8);
+            border: 3px solid #333;
+            border-radius: 10px;
+            z-index: 2;
+        }
+
+        #signLED {
+            font-size: 8rem;
+            font-weight: 900;
+            letter-spacing: -0.5rem;
+            -webkit-text-stroke: 5px #000;
+            filter: drop-shadow(0 0 30px currentColor);
+            display: block;
+            line-height: 1;
+        }
+
+        /* Form Controls */
+        .form-controls {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+        }
+
+        .control-group {
+            margin-bottom: 2rem;
+        }
+
+        .control-group label {
+            display: block;
+            color: #00d4ff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .control-group input[type="text"],
+        .control-group input[type="email"],
+        .control-group input[type="tel"],
+        .control-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .control-group input:focus,
+        .control-group textarea:focus {
+            outline: none;
+            border-color: #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .control-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .slider-group {
+            margin-bottom: 2rem;
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+
+        .slider-label span {
+            color: #00d4ff;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .slider-value {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            background: rgba(0, 212, 255, 0.2);
+            border-radius: 5px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .size-display {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .size-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .size-stat {
+            text-align: center;
+        }
+
+        .size-stat-value {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #00d4ff;
+        }
+
+        .size-stat-label {
+            display: block;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 0.3rem;
+        }
+
+        .scale-reference {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .scale-reference-title {
+            color: #00d4ff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .scale-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .scale-item {
+            color: #b0b0b0;
+            font-size: 0.9rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .scale-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 119, 255, 0.3);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.5);
+        }
+
+        .success-message {
+            margin-top: 1.5rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #00ff88, #00d4ff);
+            color: #000;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #000;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #888;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Glow Lab Signs</h1>
+            <p>Custom RGB LED signs in any color. Designed in the USA. Installed nationwide.</p>
+            <a href="#builder" class="cta-button">Get Custom Quote</a>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Hero -->
+    <section class="gallery-hero" id="gallery">
+        <h2>Our Work</h2>
+        <p>Every sign is custom-designed, fabricated, and professionally installed</p>
+        
+        <div class="masonry-gallery">
+            <!-- REPLACE THESE WITH YOUR ACTUAL PHOTOS -->
+            <!-- Format: Add your image files and update src paths -->
+            
+            <div class="gallery-photo">
+                <img src="photos/sign-1.jpg" alt="Custom LED sign installed at luxury bar" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>The Crimson Room - NYC</strong>
+                    12ft × 6ft neon script, custom burgundy glow
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/sign-2.jpg" alt="Illuminated business signage at night" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Ember Restaurant - Austin</strong>
+                    10ft × 8ft LED logo, warm white with amber accents
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/sign-3.jpg" alt="Custom LED letter installation" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Private Estate - Malibu</strong>
+                    4ft individual letters, ice blue glow
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/sign-4.jpg" alt="Boutique hotel LED signage" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Hotel Luxe - Miami</strong>
+                    15ft × 7ft entrance statement, gradient RGB
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/sign-5.jpg" alt="Restaurant LED sign daytime" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Coastal Bistro - San Diego</strong>
+                    8ft × 5ft script, turquoise with white outline
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/sign-6.jpg" alt="Custom neon bar sign at night" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Velvet Lounge - Chicago</strong>
+                    6ft × 4ft custom script, purple neon
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/sign-7.jpg" alt="LED storefront signage" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Artisan Coffee - Portland</strong>
+                    10ft × 3ft logo sign, warm white LEDs
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/sign-8.jpg" alt="Luxury home LED installation" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Private Residence - Aspen</strong>
+                    5ft monogram, champagne gold glow
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/sign-9.jpg" alt="Night club LED sign" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Pulse Nightclub - Las Vegas</strong>
+                    20ft × 10ft statement piece, RGB color-changing
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/sign-10.jpg" alt="Restaurant interior LED sign" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Sage Kitchen - Nashville</strong>
+                    7ft × 4ft interior feature, sage green with warm white
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/sign-11.jpg" alt="Hotel lobby LED installation" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Grand Hotel - San Francisco</strong>
+                    18ft × 8ft lobby statement, classic white glow
+                </div>
+            </div>
+
+            <div class="gallery-photo">
+                <img src="photos/sign-12.jpg" alt="Boutique shop LED sign" loading="lazy">
+                <div class="gallery-photo-caption">
+                    <strong>Maven Boutique - Soho</strong>
+                    9ft × 6ft storefront, pink neon script
+                </div>
+            </div>
+
+            <!-- ADD MORE PHOTOS HERE -->
+            <!-- Copy the structure above and update image paths and captions -->
+        </div>
+    </section>
+
+    <!-- Product Proof Section -->
+    <section class="product-proof">
+        <div class="proof-container">
+            <div class="proof-text">
+                <h2>Built to Last Decades</h2>
+                <p>Commercial-grade construction with industrial LED modules rated for 50,000+ hours. Each sign is custom-fabricated in our workshop and includes professional installation.</p>
+                
+                <div class="proof-features">
+                    <div class="proof-feature">
+                        <div class="proof-check">✓</div>
+                        <span>Weatherproof aluminum construction</span>
+                    </div>
+                    <div class="proof-feature">
+                        <div class="proof-check">✓</div>
+                        <span>UL-listed electrical components</span>
+                    </div>
+                    <div class="proof-feature">
+                        <div class="proof-check">✓</div>
+                        <span>5-year warranty on all installations</span>
+                    </div>
+                    <div class="proof-feature">
+                        <div class="proof-check">✓</div>
+                        <span>Professional white-glove installation</span>
+                    </div>
+                    <div class="proof-feature">
+                        <div class="proof-check">✓</div>
+                        <span>Full design consultation included</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="proof-image">
+                <!-- REPLACE WITH YOUR HERO PRODUCT PHOTO -->
+                <img src="photos/hero-product.jpg" alt="Premium LED sign close-up showing quality construction" loading="lazy">
+                <div class="proof-badge">Starting at $6,000</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">✨</span>
+                <h3>Custom Design</h3>
+                <p>Work directly with our designers to create a sign that perfectly matches your vision and space. Unlimited revisions until you love it.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🏭</span>
+                <h3>Made in USA</h3>
+                <p>Fabricated in our workshop in California using premium materials and commercial-grade components. Quality you can see and feel.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">⚡</span>
+                <h3>Energy Efficient</h3>
+                <p>Modern LED technology uses 80% less energy than traditional neon while delivering brighter, more consistent illumination.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🛠️</span>
+                <h3>Full Installation</h3>
+                <p>Professional installation included with every sign. We handle permits, electrical work, and mounting. You just flip the switch.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🌧️</span>
+                <h3>Indoor & Outdoor</h3>
+                <p>All signs are built to withstand the elements with weatherproof sealing and UV-resistant materials. Guaranteed for 5 years.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="feature-icon">🎨</span>
+                <h3>Unlimited Colors</h3>
+                <p>Choose any color imaginable. We can match your brand colors exactly or create custom color blends and gradients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Builder -->
+    <section class="builder" id="builder">
+        <div class="builder-container">
+            <h2 class="builder-title">Design Your Sign</h2>
+            <p class="builder-subtitle">Get a custom quote in 24 hours</p>
+            
+            <div class="builder-grid">
+                <!-- Venue Visualizer -->
+                <div>
+                    <div class="venue-visualizer">
+                        <div class="venue-tabs">
+                            <button class="tab-button active" data-venue="home">Home</button>
+                            <button class="tab-button" data-venue="bar">Bar/Lounge</button>
+                            <button class="tab-button" data-venue="restaurant">Restaurant</button>
+                            <button class="tab-button" data-venue="storefront">Storefront</button>
+                        </div>
+                        
+                        <div id="venueBackground" class="venue-background home"></div>
+                        
+                        <div id="signGlow"></div>
+                        
+                        <div id="signContainer">
+                            <div id="signBorder">
+                                <div id="signLED">R</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Controls -->
+                <div class="form-controls">
+                    <!-- FORMSPREE INTEGRATION: Replace YOUR_FORM_ID with your actual Formspree form ID -->
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="designForm">
+                        <div class="control-group">
+                            <label for="signText">Your Text or Logo</label>
+                            <input type="text" id="signText" name="sign_text" placeholder="Enter your business name or text" maxlength="50" required>
+                        </div>
+
+                        <div class="slider-group">
+                            <div class="slider-label">
+                                <span>Width</span>
+                                <span class="slider-value" id="widthValue">8 ft</span>
+                            </div>
+                            <input type="range" id="signWidth" name="sign_width" min="3" max="20" step="0.5" value="8">
+                        </div>
+
+                        <div class="slider-group">
+                            <div class="slider-label">
+                                <span>Height</span>
+                                <span class="slider-value" id="heightValue">5 ft</span>
+                            </div>
+                            <input type="range" id="signHeight" name="sign_height" min="2" max="15" step="0.5" value="5">
+                        </div>
+
+                        <div class="size-display">
+                            <div class="size-stats">
+                                <div class="size-stat">
+                                    <span class="size-stat-value"><span id="displayWidth">8</span> ft</span>
+                                    <span class="size-stat-label">WIDTH</span>
+                                </div>
+                                <div class="size-stat">
+                                    <span class="size-stat-value"><span id="displayHeight">5</span> ft</span>
+                                    <span class="size-stat-label">HEIGHT</span>
+                                </div>
+                                <div class="size-stat">
+                                    <span class="size-stat-value"><span id="totalArea">40.0</span> ft²</span>
+                                    <span class="size-stat-label">TOTAL AREA</span>
+                                </div>
+                            </div>
+                            
+                            <div class="scale-reference">
+                                <div class="scale-reference-title">Scale Reference:</div>
+                                <div class="scale-items" id="scaleItems">
+                                    <div class="scale-item">Similar to a king-size bed</div>
+                                    <div class="scale-item">Ideal for restaurant walls and bar backdrops</div>
+                                    <div class="scale-item">Visible from across medium-sized rooms</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="userVenue">Installation Type</label>
+                            <input type="text" id="userVenue" name="venue_type" placeholder="e.g., Restaurant, Bar, Home, Storefront" required>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="userName">Your Name</label>
+                            <input type="text" id="userName" name="name" placeholder="Full name" required>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="userEmail">Email</label>
+                            <input type="email" id="userEmail" name="email" placeholder="your@email.com" required>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="userPhone">Phone</label>
+                            <input type="tel" id="userPhone" name="phone" placeholder="(555) 123-4567" required>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="additionalNotes">Project Details</label>
+                            <textarea id="additionalNotes" name="notes" placeholder="Tell us about your space, timeline, or any specific requirements..."></textarea>
+                        </div>
+
+                        <!-- Hidden field to capture the venue type from visualization -->
+                        <input type="hidden" name="selected_venue" id="selectedVenue" value="home">
+
+                        <button type="submit" class="submit-button">Get Custom Quote</button>
+
+                        <div class="success-message" id="successMessage">
+                            ✓ Quote request received! We'll respond within 24 hours.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Glow Lab Signs. All rights reserved.</p>
+        <p>Professional installation included • Based in Truckee, CA • Nationwide service</p>
+        <div class="footer-links">
+            <a href="#builder">Get Quote</a>
+            <a href="mailto:hello@glowlabsigns.com">hello@glowlabsigns.com</a>
+            <a href="tel:+15305551234">(530) 555-1234</a>
+            <a href="https://instagram.com/glowlabsigns" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Elements
+        const signLED = document.getElementById('signLED');
+        const signBorder = document.getElementById('signBorder');
+        const signGlow = document.getElementById('signGlow');
+        const signContainer = document.getElementById('signContainer');
+        const venueBackground = document.getElementById('venueBackground');
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const selectedVenue = document.getElementById('selectedVenue');
+        
+        // Set initial venue and letter
+        venueBackground.className = 'venue-background home';
+        signBorder.setAttribute('data-letter', 'R');
+        
+        // Venue switching
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                const venue = button.dataset.venue;
+                venueBackground.className = `venue-background ${venue}`;
+                selectedVenue.value = venue;
+            });
+        });
+        
+        // Animate the LED with cycling colors and matching glow
+        let hue = 200;
+        setInterval(() => {
+            hue = (hue + 0.5) % 360;
+            
+            const gradient = `linear-gradient(135deg, 
+                hsl(${hue}, 100%, 50%), 
+                hsl(${(hue + 60) % 360}, 100%, 60%), 
+                hsl(${(hue + 120) % 360}, 100%, 55%))`;
+            
+            signLED.style.background = gradient;
+            signLED.style.webkitBackgroundClip = 'text';
+            signLED.style.backgroundClip = 'text';
+            
+            const glowColor = `hsl(${hue}, 100%, 50%)`;
+            signGlow.style.background = `radial-gradient(circle, ${glowColor} 0%, transparent 70%)`;
+        }, 30);
+
+        // Text input
+        const signTextInput = document.getElementById('signText');
+        signTextInput.addEventListener('input', (e) => {
+            const text = e.target.value.trim() || 'R';
+            const firstChar = text.charAt(0).toUpperCase();
+            signLED.textContent = firstChar;
+            signBorder.setAttribute('data-letter', firstChar);
+        });
+
+        // Size sliders
+        const widthSlider = document.getElementById('signWidth');
+        const heightSlider = document.getElementById('signHeight');
+        const widthValue = document.getElementById('widthValue');
+        const heightValue = document.getElementById('heightValue');
+        const displayWidth = document.getElementById('displayWidth');
+        const displayHeight = document.getElementById('displayHeight');
+        const totalArea = document.getElementById('totalArea');
+        const scaleItems = document.getElementById('scaleItems');
+
+        function updateSizeDisplay() {
+            const width = parseFloat(widthSlider.value);
+            const height = parseFloat(heightSlider.value);
+            
+            widthValue.textContent = `${width} ft`;
+            heightValue.textContent = `${height} ft`;
+            displayWidth.textContent = width;
+            displayHeight.textContent = height;
+            totalArea.textContent = (width * height).toFixed(1);
+
+            const avgSize = (width + height) / 2;
+            const scaleFactor = avgSize / 7;
+            signContainer.style.transform = `translate(-50%, -50%) scale(${0.8 + (scaleFactor * 0.4)})`;
+            
+            updateScaleReference(width, height);
+        }
+
+        function updateScaleReference(width, height) {
+            const area = width * height;
+            let references = [];
+
+            if (area < 20) {
+                references = [
+                    'About the size of a large coffee table',
+                    'Perfect for home bars and small retail displays',
+                    'Can be hand-carried through standard doorways'
+                ];
+            } else if (area < 50) {
+                references = [
+                    'Similar to a king-size bed',
+                    'Ideal for restaurant walls and bar backdrops',
+                    'Visible from across medium-sized rooms'
+                ];
+            } else if (area < 100) {
+                references = [
+                    'About the size of a small car',
+                    'Perfect for hotel lobbies and large restaurants',
+                    'Visible from down the street',
+                    'Requires professional installation team'
+                ];
+            } else {
+                references = [
+                    'Comparable to a large garage door',
+                    'Stadium and concert venue scale',
+                    'Visible from several blocks away',
+                    'Requires crane or specialized lifting equipment',
+                    'Structural engineering assessment recommended'
+                ];
+            }
+
+            scaleItems.innerHTML = references.map(ref => 
+                `<div class="scale-item">${ref}</div>`
+            ).join('');
+        }
+
+        widthSlider.addEventListener('input', updateSizeDisplay);
+        heightSlider.addEventListener('input', updateSizeDisplay);
+
+        // Formspree handles the submission automatically
+        // But we'll add success message handling
+        const designForm = document.getElementById('designForm');
+        const successMessage = document.getElementById('successMessage');
+
+        designForm.addEventListener('submit', () => {
+            // Show success message (Formspree will handle the actual submission)
+            setTimeout(() => {
+                successMessage.classList.add('show');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            }, 500);
+        });
+
+        // Initialize
+        updateSizeDisplay();
+    </script>
+</body>
+</html>

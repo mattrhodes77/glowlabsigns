@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow Lab Signs | Custom RGB LED Signs Nationwide</title>
     <meta name="description" content="Custom RGB LED signs designed and professionally installed nationwide. Premium illuminated signage for businesses and luxury homes. Starting at $6,000. Based in Truckee, CA.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Pacifico&family=Dancing+Script:wght@700&family=Oswald:wght@700&family=Anton&family=Montserrat:wght@800&family=Playfair+Display:wght@900&family=Righteous&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -577,12 +580,23 @@
         .form-group textarea {
             width: 100%;
             padding: 1rem;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.7);
             border: 1px solid rgba(0, 212, 255, 0.3);
             border-radius: 10px;
             color: #fff;
             font-size: 1rem;
             transition: all 0.3s ease;
+        }
+
+        .form-group select {
+            background: rgba(0, 0, 0, 0.8);
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 0.5rem;
         }
 
         .form-group input:focus,
@@ -655,6 +669,47 @@
                 transform: translateY(0);
             }
         }
+
+        /* Sign Preview */
+        .sign-preview-container {
+            margin: 2rem 0;
+            padding: 3rem;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sign-preview-text {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #00d4ff;
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.8),
+                         0 0 80px rgba(0, 212, 255, 0.4);
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            word-break: break-all;
+        }
+
+        @media (max-width: 768px) {
+            .sign-preview-text {
+                font-size: 3rem;
+            }
+        }
+
+        /* Font Classes */
+        .font-bebas { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.15em; }
+        .font-pacifico { font-family: 'Pacifico', cursive; letter-spacing: 0.05em; }
+        .font-dancing { font-family: 'Dancing Script', cursive; }
+        .font-oswald { font-family: 'Oswald', sans-serif; letter-spacing: 0.1em; }
+        .font-anton { font-family: 'Anton', sans-serif; letter-spacing: 0.12em; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; letter-spacing: 0.08em; }
+        .font-playfair { font-family: 'Playfair Display', serif; letter-spacing: 0.05em; }
+        .font-righteous { font-family: 'Righteous', sans-serif; letter-spacing: 0.08em; }
 
         /* FAQ Section */
         .faq {
@@ -1084,12 +1139,32 @@
 
             <form action="https://formspree.io/f/xanlrywq" method="POST" class="builder-form" id="quoteForm">
                 <div class="form-group">
-                    <label for="signText">1. What text or design do you want?</label>
-                    <input type="text" id="signText" name="sign_text" placeholder="e.g., Your name, business name, logo concept..." required>
+                    <label for="signText">1. What text or design do you want? <span style="color: #888; font-size: 0.9rem;">(Max 10 characters)</span></label>
+                    <input type="text" id="signText" name="sign_text" placeholder="e.g., Your name, business name..." maxlength="10" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="signSize">2. What size are you thinking?</label>
+                    <label for="fontStyle">2. Choose your font style</label>
+                    <select id="fontStyle" name="font_style" required>
+                        <option value="">Select a font style...</option>
+                        <option value="bebas">Bold Block Letters (Bebas Neue)</option>
+                        <option value="pacifico">Elegant Script (Pacifico)</option>
+                        <option value="dancing">Flowing Script (Dancing Script)</option>
+                        <option value="oswald">Strong Sans-Serif (Oswald)</option>
+                        <option value="anton">Heavy Impact (Anton)</option>
+                        <option value="montserrat">Modern Bold (Montserrat)</option>
+                        <option value="playfair">Classic Serif (Playfair Display)</option>
+                        <option value="righteous">Retro Bold (Righteous)</option>
+                    </select>
+                </div>
+
+                <!-- Live Preview -->
+                <div class="sign-preview-container">
+                    <div id="signPreview" class="sign-preview-text font-bebas">GLOW</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="signSize">3. What size are you thinking?</label>
                     <select id="signSize" name="sign_size" required>
                         <option value="">Select approximate size...</option>
                         <option value="small">Small (2-4 ft) - $6-8K</option>
@@ -1101,12 +1176,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="installType">3. Where will this be installed?</label>
+                    <label for="installType">4. Where will this be installed?</label>
                     <input type="text" id="installType" name="install_type" placeholder="e.g., Home entryway, restaurant wall, bar backdrop..." required>
                 </div>
 
                 <div class="form-group">
-                    <label>4. Your contact information</label>
+                    <label>5. Your contact information</label>
                     <div class="form-row">
                         <input type="text" name="name" placeholder="Full name" required>
                         <input type="email" name="email" placeholder="Email address" required>
@@ -1316,6 +1391,29 @@
                 }
             });
         });
+
+        // Sign preview functionality
+        const signTextInput = document.getElementById('signText');
+        const fontStyleSelect = document.getElementById('fontStyle');
+        const signPreview = document.getElementById('signPreview');
+
+        function updatePreview() {
+            const text = signTextInput.value.trim() || 'GLOW';
+            const font = fontStyleSelect.value || 'bebas';
+
+            signPreview.textContent = text.toUpperCase();
+
+            // Remove all font classes
+            signPreview.className = 'sign-preview-text';
+            // Add selected font class
+            signPreview.classList.add('font-' + font);
+        }
+
+        signTextInput.addEventListener('input', updatePreview);
+        fontStyleSelect.addEventListener('change', updatePreview);
+
+        // Initialize preview
+        updatePreview();
     </script>
 </body>
 </html>

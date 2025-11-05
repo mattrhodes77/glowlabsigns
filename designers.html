@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designer Partners | Glow Lab Signs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a0a0a;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .header h1 {
+            color: #fff;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00d4ff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header p {
+            color: #b0b0b0;
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #0077ff;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            color: #00d4ff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-text {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            color: #00d4ff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Commission Callout */
+        .commission-callout {
+            background: linear-gradient(135deg, rgba(0, 119, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .commission-callout h3 {
+            color: #00d4ff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .commission-rate {
+            font-size: 4rem;
+            font-weight: 900;
+            color: #00ff88;
+            margin: 1rem 0;
+        }
+
+        .commission-callout p {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+        }
+
+        /* Process Steps */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .step {
+            background: rgba(0, 119, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 119, 255, 0.2);
+            position: relative;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            border-radius: 50%;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 900;
+            line-height: 3rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .step p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Partner Form */
+        .partner-form {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+
+        .partner-form h3 {
+            color: #00d4ff;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: #00d4ff;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(0, 119, 255, 0.3);
+            border-radius: 10px;
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #00d4ff;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 119, 255, 0.5);
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: rgba(0, 255, 136, 0.1);
+            border: 2px solid rgba(0, 255, 136, 0.5);
+            padding: 1.5rem;
+            border-radius: 10px;
+            color: #00ff88;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 119, 255, 0.2);
+        }
+
+        footer p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .footer-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #0077ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <h1>Designer Partner Program</h1>
+        <p>Elevate your projects with custom LED installations</p>
+        <a href="index.html" class="back-link">← Back to Main Site</a>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Value Proposition -->
+        <section class="section">
+            <h2 class="section-title">Partner With Glow Lab Signs</h2>
+            <p class="section-text">
+                As an interior designer, architect, or design professional, you understand that lighting makes the space. Our custom LED signs aren't just signage—they're statement pieces, permanent art installations that become the centerpiece of your designs.
+            </p>
+            <p class="section-text">
+                We handle everything: design mockups, fabrication, licensed electrical installation, permits, and warranties. You focus on design. We handle execution. Your clients get a stunning result, and you earn generous commissions.
+            </p>
+        </section>
+
+        <!-- Commission Callout -->
+        <div class="commission-callout">
+            <h3>Earn on Every Project</h3>
+            <div class="commission-rate">10-15%</div>
+            <p>Commission on all referred projects • Average project value $15,000-$25,000</p>
+        </div>
+
+        <!-- Benefits -->
+        <section class="section">
+            <h2 class="section-title">Why Partner With Us?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎨</div>
+                    <h3>Elevate Your Portfolio</h3>
+                    <p>Offer clients something truly unique. Custom RGB LED signs become focal points that elevate your entire design.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>White-Glove Service</h3>
+                    <p>We handle design coordination, fabrication, electrical work, permits, and installation. You look like the hero—we do the work.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Fast Turnaround</h3>
+                    <p>2-4 week timeline from approval to installation. We keep your projects on schedule with predictable delivery.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💎</div>
+                    <h3>Premium Quality</h3>
+                    <p>Commercial-grade LEDs, professional electrical installation, 10-year warranties. Your reputation stays spotless.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌈</div>
+                    <h3>Full RGB Control</h3>
+                    <p>Millions of colors, 20+ preset animations, app control. Give clients dynamic lighting that adapts to any mood or event.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🇺🇸</div>
+                    <h3>Nationwide Service</h3>
+                    <p>We install anywhere in the US through our network of licensed partner electricians. Serve clients wherever they are.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="section">
+            <h2 class="section-title">How Partnership Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <p>Introduce us to your client or include our signs in your design proposal. We provide portfolio examples and technical specs.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <p>We create custom mockups in your client's actual space (using photos you provide). Handle all pricing and sales conversations.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <p>Upon approval, we fabricate in our Truckee workshop. Keep you updated on progress. Coordinate installation timing with your schedule.</p>
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <p>Professional installation by licensed electrician. We handle permits, electrical, final walkthrough. You receive commission within 30 days.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ideal Projects -->
+        <section class="section">
+            <h2 class="section-title">Perfect For These Projects</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Luxury Residences</h3>
+                    <p>Home bars, game rooms, wine cellars, outdoor living spaces, man caves, she sheds</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Hospitality</h3>
+                    <p>Restaurants, bars, hotels, resorts, breweries, wineries</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Retail</h3>
+                    <p>Boutiques, coffee shops, salons, fitness studios, showrooms</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Commercial</h3>
+                    <p>Corporate offices, lobbies, conference rooms, co-working spaces</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partner Form -->
+        <section class="section">
+            <div class="partner-form">
+                <h3>Join Our Partner Network</h3>
+                <form id="partnerForm" action="https://formspree.io/f/xanlrywq" method="POST">
+                    <input type="hidden" name="_subject" value="Designer Partner Application">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="firm">Design Firm Name</label>
+                            <input type="text" id="firm" name="firm">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Primary Market/Location *</label>
+                        <input type="text" id="location" name="location" placeholder="e.g., Lake Tahoe, San Francisco Bay Area" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="website">Website or Portfolio URL</label>
+                        <input type="url" id="website" name="website" placeholder="https://">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="practice">Tell us about your design practice and typical client profile *</label>
+                        <textarea id="practice" name="practice" placeholder="What types of projects do you work on? What's your typical client budget range? Any specific markets you serve?" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Submit Partner Application</button>
+
+                    <div class="success-message" id="successMessage">
+                        ✓ Thank you! We'll review your application and be in touch within 48 hours.
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Glow Lab Signs. All rights reserved.</p>
+        <p>Professional installation included • Nationwide service</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="mailto:hello@glowlabsigns.com">Contact</a>
+            <a href="https://instagram.com/glowlabsigns" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        const partnerForm = document.getElementById('partnerForm');
+        const successMessage = document.getElementById('successMessage');
+
+        partnerForm.addEventListener('submit', function(e) {
+            // Formspree will handle the actual submission
+            // This just shows the success message after submission
+            setTimeout(() => {
+                successMessage.classList.add('show');
+                partnerForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

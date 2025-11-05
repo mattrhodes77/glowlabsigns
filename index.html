@@ -748,6 +748,63 @@
             color: #fff;
         }
 
+        /* Designer Teaser Section */
+        .designer-teaser {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 119, 255, 0.05) 0%, rgba(0, 212, 255, 0.02) 100%);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .teaser-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .teaser-content h3 {
+            color: #00d4ff;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .teaser-content p {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .teaser-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: rgba(0, 119, 255, 0.1);
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            color: #00d4ff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .teaser-button:hover {
+            background: rgba(0, 119, 255, 0.2);
+            border-color: #00d4ff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .designer-teaser {
+                padding: 3rem 1.5rem;
+            }
+
+            .teaser-content p {
+                font-size: 1rem;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -1179,6 +1236,17 @@
                         We're actively developing one and hope to launch one soon. If this is critical for your project, contact us if you're interested in beta testing.
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Designer Partners Teaser -->
+    <section class="designer-teaser">
+        <div class="teaser-container">
+            <div class="teaser-content">
+                <h3>Are You a Designer or Architect?</h3>
+                <p>Partner with us to offer your clients stunning custom LED installations. White-glove service, generous commissions, fast turnaround.</p>
+                <a href="designers.html" class="teaser-button">Learn About Our Partner Program →</a>
             </div>
         </div>
     </section>

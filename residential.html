@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom LED Signs for Luxury Homes | Glow Lab Signs</title>
+    <meta name="description" content="Transform your home with custom RGB LED art. Perfect for home bars, game rooms, entryways, and luxury estates. The art your guests will remember forever.">
+    <link rel="icon" type="image/x-icon" href="photos/GlowLabSigns_Favicon_ICO.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a0a0a;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .header-logo {
+            max-width: 300px;
+            height: auto;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #0077ff;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(26, 26, 46, 0.8) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            color: #00d4ff;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            max-width: 700px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.5);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            color: #00d4ff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: #b0b0b0;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-text {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            color: #00d4ff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Spaces Grid */
+        .spaces-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .space-card {
+            background: rgba(0, 119, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 119, 255, 0.2);
+            text-align: center;
+        }
+
+        .space-card h3 {
+            color: #00d4ff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .space-card p {
+            color: #b0b0b0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Testimonial Highlight */
+        .testimonial-highlight {
+            background: linear-gradient(135deg, rgba(0, 119, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .testimonial-quote {
+            font-size: 2rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: #fff;
+            font-size: 1.5rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            color: #00d4ff;
+            font-size: 1.1rem;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+        }
+
+        .why-choose h2 {
+            color: #00d4ff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .why-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .why-item {
+            background: rgba(0, 119, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #00d4ff;
+            margin-bottom: 1.5rem;
+        }
+
+        .why-item h3 {
+            color: #00d4ff;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .why-item p {
+            color: #b0b0b0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 119, 255, 0.2);
+        }
+
+        footer p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #0077ff;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .container {
+                padding: 3rem 1.5rem;
+            }
+
+            .benefits-grid, .spaces-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <img src="photos/GlowLabSigns_LOGO_Transparent_TIGHT.png" alt="Glow Lab Signs" class="header-logo">
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="photos/GlowLabSigns_2ndFloor_6x6_R_night.jpg" alt="Custom LED sign in luxury home">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Art That Defines Your Home</h1>
+            <p class="hero-subtitle">The Only Piece Your Guests Will Ask About</p>
+            <p>Make a statement that's uniquely yours. Custom LED art that becomes the centerpiece everyone remembers.</p>
+            <a href="index.html#quote" class="cta-button">Design Your Custom Sign</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Introduction -->
+        <section class="section">
+            <h2 class="section-title">More Than Decoration</h2>
+            <p class="section-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                Your home is your sanctuary, your statement, your legacy. Why settle for art that hangs on every other wall? Our custom RGB LED signs aren't just beautiful—they're conversation starters, memory makers, and the focal point that makes your space unmistakably yours.
+            </p>
+        </section>
+
+        <!-- Testimonial -->
+        <div class="testimonial-highlight">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">It's literally the only piece of art that I've ever owned that people want selfies with</p>
+            <p class="testimonial-author">— Private Residence Client, Lake Tahoe</p>
+        </div>
+
+        <!-- Why It's Perfect -->
+        <section class="section">
+            <h2 class="section-title">Why Homeowners Choose Custom LED Art</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>The Perfect Gift</h3>
+                    <p>Shopping for someone who has everything? Our signs are the gift that actually gets a reaction. Perfect for impossible-to-shop-for spouses, milestone celebrations, and making memories that last.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Your Signature Space</h3>
+                    <p>Stop blending in. Create an instantly recognizable room that's uniquely yours. Whether it's your home bar, game room, or grand entryway—make it legendary.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📸</div>
+                    <h3>The Instagram Moment</h3>
+                    <p>Every guest becomes a photographer. Every gathering becomes memorable. This isn't just art—it's the backdrop to your best moments and the selfie spot everyone loves.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💎</div>
+                    <h3>Built to Last Generations</h3>
+                    <p>10-year warranty. 50,000+ hour LED lifespan. Premium materials. Professional installation. This is heirloom-quality art that your grandchildren will remember.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎨</div>
+                    <h3>Completely Custom</h3>
+                    <p>Your family initial. Your name. Your favorite quote. Your logo. Anything you dream, we create. Full RGB color means it matches any mood, any event, any occasion.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔧</div>
+                    <h3>Effortless Experience</h3>
+                    <p>We handle everything: design mockups in your actual space, fabrication, licensed electrical work, permits, and professional installation. You just enjoy the result.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perfect Spaces -->
+        <section class="section">
+            <h2 class="section-title">Perfect For Every Luxury Space</h2>
+            <p class="section-subtitle">Turn ordinary rooms into destinations</p>
+
+            <div class="spaces-grid">
+                <div class="space-card">
+                    <h3>🍸 Home Bars</h3>
+                    <p>Transform your bar into the neighborhood's favorite hangout. Custom neon that rivals any upscale lounge.</p>
+                </div>
+
+                <div class="space-card">
+                    <h3>🎮 Game Rooms</h3>
+                    <p>Level up your man cave or entertainment space. RGB lighting that sets the perfect vibe for every game night.</p>
+                </div>
+
+                <div class="space-card">
+                    <h3>🏠 Grand Entryways</h3>
+                    <p>Make your family name shine—literally. First impressions that guests never forget.</p>
+                </div>
+
+                <div class="space-card">
+                    <h3>🏔️ Mountain Homes</h3>
+                    <p>Add modern luxury to rustic elegance. Perfect for Tahoe cabins, ski lodges, and vacation estates.</p>
+                </div>
+
+                <div class="space-card">
+                    <h3>🍷 Wine Cellars</h3>
+                    <p>Elevate your collection with ambient LED art. Sophisticated lighting for your finest vintages.</p>
+                </div>
+
+                <div class="space-card">
+                    <h3>🌳 Outdoor Living</h3>
+                    <p>Extend your living space with weather-resistant installations. Patios, pool areas, outdoor bars.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-highlight">
+            <div class="testimonial-quote">"</div>
+            <p class="testimonial-text">My husband is always impossible to shop for, this truly surprised him and he loves it</p>
+            <p class="testimonial-author">— Gift Purchaser</p>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="why-choose">
+            <h2>The Glow Lab Difference</h2>
+            <div class="why-list">
+                <div class="why-item">
+                    <h3>See It Before We Build It</h3>
+                    <p>We create photorealistic mockups of your sign in your actual space. No guesswork. No surprises. You'll know exactly how it looks before we start.</p>
+                </div>
+
+                <div class="why-item">
+                    <h3>Premium Materials, Expert Craftsmanship</h3>
+                    <p>Commercial-grade LEDs. Hand-crafted construction. Licensed electrical installation. Every detail perfected for luxury homes.</p>
+                </div>
+
+                <div class="why-item">
+                    <h3>Full RGB Control</h3>
+                    <p>Millions of colors. 20+ preset animations. Remote control included. Match any mood from romantic dinner to game day excitement.</p>
+                </div>
+
+                <div class="why-item">
+                    <h3>Nationwide Service</h3>
+                    <p>Based in Truckee, CA, but we install anywhere through our network of trusted professional electricians. Lake Tahoe to Miami to New York.</p>
+                </div>
+
+                <div class="why-item">
+                    <h3>White-Glove Installation</h3>
+                    <p>Licensed electricians. Permit coordination. Hidden wiring. Precision mounting. We handle everything so your home stays pristine.</p>
+                </div>
+
+                <div class="why-item">
+                    <h3>Built to Last</h3>
+                    <p>5-year warranty standard. 50,000+ hour LED lifespan. 10+ year longevity. This is art for life, not just for now.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final CTA -->
+        <section class="section" style="text-align: center;">
+            <h2 class="section-title">Ready to Create Your Signature Space?</h2>
+            <p class="section-subtitle">Start with a free design consultation. See your vision come to life.</p>
+            <a href="index.html#quote" class="cta-button">Get Your Custom Quote</a>
+            <p class="section-text" style="margin-top: 2rem;">8-10 weeks from design to installation • Starting at $6,000</p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Glow Lab Signs. All rights reserved.</p>
+        <p>Professional installation included • Nationwide service</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="locations.html">Locations</a>
+            <a href="designers.html">Designer Partners</a>
+            <a href="mailto:hello@glowlabsigns.com">Contact</a>
+            <a href="https://instagram.com/glowlabsigns" target="_blank">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

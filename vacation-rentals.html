@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom LED Signs for Airbnb & Vacation Rentals | Glow Lab Signs</title>
+    <meta name="description" content="Command $50-100/night premiums with custom LED signs that make your property THE one guests remember. 3-8 month payback period. Book more, charge more.">
+    <link rel="icon" type="image/x-icon" href="photos/GlowLabSigns_Favicon_ICO.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a0a0a;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .header-logo {
+            max-width: 300px;
+            height: auto;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #0077ff;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(26, 26, 46, 0.8) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            color: #00ff88;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+
+        .hero p {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            max-width: 700px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.5);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            color: #00d4ff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: #b0b0b0;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-text {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* ROI Stats Bar */
+        .roi-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .roi-stat {
+            text-align: center;
+        }
+
+        .roi-stat-number {
+            display: block;
+            color: #00ff88;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .roi-stat-label {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            color: #00d4ff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .stat-highlight {
+            color: #00ff88;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* ROI Calculation Box */
+        .roi-box {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            margin: 4rem 0;
+        }
+
+        .roi-box h3 {
+            color: #00d4ff;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .roi-breakdown {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .roi-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 119, 255, 0.2);
+        }
+
+        .roi-line:last-child {
+            border-bottom: none;
+            padding-top: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .roi-line-label {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+        }
+
+        .roi-line-value {
+            color: #00ff88;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .comparison-box {
+            padding: 2.5rem;
+            border-radius: 20px;
+        }
+
+        .comparison-bland {
+            background: rgba(100, 100, 100, 0.1);
+            border: 2px solid rgba(100, 100, 100, 0.3);
+        }
+
+        .comparison-bland h3 {
+            color: #888;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-standout {
+            background: rgba(0, 255, 136, 0.05);
+            border: 2px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .comparison-standout h3 {
+            color: #00ff88;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .comparison-box p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 119, 255, 0.2);
+        }
+
+        footer p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #0077ff;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .container {
+                padding: 3rem 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .roi-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <img src="photos/GlowLabSigns_LOGO_Transparent_TIGHT.png" alt="Glow Lab Signs" class="header-logo">
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="photos/GlowLabSIgns_Tahoe_6x6_blue_daytime.jpg" alt="Custom LED art in luxury vacation rental">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>The Property Guests Remember</h1>
+            <p class="hero-subtitle">$10,000+ Extra Revenue Annually</p>
+            <p>Your competition has nice furniture. You'll have 1,000 guest selfies driving bookings. Command premium rates with the feature that makes your listing unforgettable.</p>
+            <a href="index.html#quote" class="cta-button">Calculate Your Revenue Boost</a>
+        </div>
+    </section>
+
+    <!-- ROI Stats -->
+    <div class="container">
+        <div class="roi-stats">
+            <div class="roi-stat">
+                <span class="roi-stat-number">7%</span>
+                <span class="roi-stat-label">Booking Rate Increase</span>
+            </div>
+            <div class="roi-stat">
+                <span class="roi-stat-number">$50-100</span>
+                <span class="roi-stat-label">Nightly Premium</span>
+            </div>
+            <div class="roi-stat">
+                <span class="roi-stat-number">5⭐</span>
+                <span class="roi-stat-label">Reviews Mention It</span>
+            </div>
+            <div class="roi-stat">
+                <span class="roi-stat-number">3-8</span>
+                <span class="roi-stat-label">Month Payback</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Comparison -->
+        <div class="comparison-grid">
+            <div class="comparison-box comparison-bland">
+                <h3>😴 Generic Listings</h3>
+                <p>"Beautiful 3BR with mountain views"</p>
+                <p>"Fully equipped kitchen"</p>
+                <p>"Close to skiing"</p>
+                <p><strong>Sound familiar?</strong> You're describing 200 other properties in your market. Guests pick based on price alone.</p>
+            </div>
+
+            <div class="comparison-box comparison-standout">
+                <h3>🌟 Your Property (With Custom LED Art)</h3>
+                <p>"The house with the epic LED installation!"</p>
+                <p>"That Instagram-famous Tahoe cabin"</p>
+                <p>"OMG the neon is incredible"</p>
+                <p><strong>This is what guests say</strong> when they remember YOUR property. Price becomes secondary to experience.</p>
+            </div>
+        </div>
+
+        <!-- The Math -->
+        <section class="section">
+            <h2 class="section-title">The Revenue Impact</h2>
+            <p class="section-subtitle">Here's how a $15,000 installation transforms your bookings</p>
+
+            <div class="roi-box">
+                <h3>Annual Revenue Increase (Conservative Estimate)</h3>
+                <div class="roi-breakdown">
+                    <div class="roi-line">
+                        <span class="roi-line-label">Your current nightly rate</span>
+                        <span class="roi-line-value">$400</span>
+                    </div>
+                    <div class="roi-line">
+                        <span class="roi-line-label">Premium you can now charge</span>
+                        <span class="roi-line-value">+$75/night</span>
+                    </div>
+                    <div class="roi-line">
+                        <span class="roi-line-label">Annual bookings (60% occupancy)</span>
+                        <span class="roi-line-value">219 nights</span>
+                    </div>
+                    <div class="roi-line">
+                        <span class="roi-line-label">Additional revenue from premium</span>
+                        <span class="roi-line-value">$16,425/year</span>
+                    </div>
+                    <div class="roi-line">
+                        <span class="roi-line-label">Increased bookings (7% boost)</span>
+                        <span class="roi-line-value">+$11,620/year</span>
+                    </div>
+                    <div class="roi-line">
+                        <span class="roi-line-label">TOTAL ANNUAL INCREASE</span>
+                        <span class="roi-line-value">$28,045</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="section-text" style="text-align: center; max-width: 700px; margin: 2rem auto 0;">
+                <span class="stat-highlight">Your $15K investment returns $28K annually.</span> That's a 187% ROI in year one. Over 10 years? $280,000+ in additional revenue.
+            </p>
+        </section>
+
+        <!-- Benefits -->
+        <section class="section">
+            <h2 class="section-title">Why STR Owners Choose Custom LED Signs</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">📸</div>
+                    <h3>The Hero Shot That Gets Clicks</h3>
+                    <p>Your listing's first photo isn't just another living room—it's an Instagram-worthy moment. <span class="stat-highlight">Standout photos drive 3x more clicks</span> on Airbnb and VRBO.</p>
+                    <p>Guests book based on "wow factor." You just added it.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⭐</div>
+                    <h3>Reviews Write Themselves</h3>
+                    <p>"The LED art was AMAZING!" appears in every 5-star review. Guests remember unique features, not generic amenities.</p>
+                    <p>More positive reviews = higher search ranking = more bookings. It compounds.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Justify Premium Pricing</h3>
+                    <p><span class="stat-highlight">Properties with unique standout features command $50-100/night premiums.</span> Stop competing on price with cookie-cutter rentals.</p>
+                    <p>You're offering an experience. Experiences justify premium rates.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Every Guest Is Marketing</h3>
+                    <p>Guests photograph your installation, tag your property on Instagram, and tell their friends. Free word-of-mouth advertising that reaches thousands.</p>
+                    <p>One viral post = bookings for months.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Instant Recognition</h3>
+                    <p>Become "that house with the incredible art." In a competitive market, instant recognition = rebookings and referrals.</p>
+                    <p>Guests remember YOUR property when recommending Tahoe/Miami/etc. to friends.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Competitive Advantage</h3>
+                    <p>While others compete on WiFi speed and hot tubs, you're offering something truly unique. <span class="stat-highlight">7% booking increase</span> from standout differentiation.</p>
+                    <p>You're not just another rental. You're THE rental.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perfect For Section -->
+        <section class="section">
+            <h2 class="section-title">Perfect For</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>🏔️ Mountain & Ski Rentals</h3>
+                    <p>Add modern luxury to rustic cabins. Perfect for Tahoe, Aspen, Breckenridge, Park City. Your family name or property name in stunning LED.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🏖️ Beach Houses</h3>
+                    <p>Coastal vibes meet neon art. Stand out in saturated beach markets from Malibu to Miami to Outer Banks.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🏡 Luxury Estates</h3>
+                    <p>High-end properties deserve high-end touches. Custom LED art that matches your premium positioning and nightly rates.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🍷 Wine Country Villas</h3>
+                    <p>Sophisticated LED installations for Napa, Sonoma, and other wine destinations. Elegant ambiance that photographs beautifully.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🌆 Urban Rentals</h3>
+                    <p>City apartments and lofts that compete on style. Create that boutique hotel vibe guests crave.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🎉 Event Spaces</h3>
+                    <p>Wedding venues, party houses, and retreat centers. Your custom installation becomes part of every celebration photo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Makes You Different -->
+        <section class="section">
+            <h2 class="section-title">The Glow Lab Difference for STR Owners</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>See It Before We Build</h3>
+                    <p>We create photorealistic mockups in your actual space. You'll know exactly how it looks in your listing photos before we fabricate.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>Built for High-Traffic Use</h3>
+                    <p>Commercial-grade LEDs. 50,000+ hour lifespan. Designed to withstand constant guest turnover for 10+ years.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>Professional Installation</h3>
+                    <p>Licensed electricians handle mounting, wiring, and permits. Your property stays pristine. You focus on hosting.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>Full RGB Control</h3>
+                    <p>Millions of colors. 20+ animations. Match any season, holiday, or guest preference. One piece, infinite moods.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>Nationwide Service</h3>
+                    <p>From Lake Tahoe to the Hamptons to Key West. We install anywhere through our network of trusted professionals.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>5-Year Warranty</h3>
+                    <p>Built to last. Backed by warranty. Your investment is protected for the long haul.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section" style="text-align: center;">
+            <h2 class="section-title">Ready to Stand Out on Airbnb?</h2>
+            <p class="section-subtitle">Start with a free consultation and custom mockup for your property</p>
+            <a href="index.html#quote" class="cta-button">Get Your Custom Quote</a>
+            <p class="section-text" style="margin-top: 2rem;">
+                <span class="stat-highlight">Average investment: $12,000-$20,000</span><br>
+                Typical payback: 3-8 months • $10,000+ annual revenue increase • 10+ year lifespan
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Glow Lab Signs. All rights reserved.</p>
+        <p>Professional installation included • Nationwide service</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="locations.html">Locations</a>
+            <a href="designers.html">Designer Partners</a>
+            <a href="mailto:hello@glowlabsigns.com">Contact</a>
+            <a href="https://instagram.com/glowlabsigns" target="_blank">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

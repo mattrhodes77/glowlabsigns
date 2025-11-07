@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom LED Signs for Retail & Commercial | Glow Lab Signs</title>
+    <meta name="description" content="Turn your storefront into a landmark with custom LED signs. 80% of shoppers enter based on signage. 400% more views than traditional signs. 4-10 month payback.">
+    <link rel="icon" type="image/x-icon" href="photos/GlowLabSigns_Favicon_ICO.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #0a0a0a;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .header-logo {
+            max-width: 300px;
+            height: auto;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #00d4ff;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #0077ff;
+        }
+
+        /* Hero */
+        .hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(26, 26, 46, 0.8) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            color: #00ff88;
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            font-weight: 700;
+        }
+
+        .hero p {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            max-width: 700px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.5);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            color: #00d4ff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: #b0b0b0;
+            font-size: 1.3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-text {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        /* ROI Stats Bar */
+        .roi-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border-radius: 20px;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .roi-stat {
+            text-align: center;
+        }
+
+        .roi-stat-number {
+            display: block;
+            color: #00ff88;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .roi-stat-label {
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 119, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 15px 40px rgba(0, 119, 255, 0.2);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            color: #00d4ff;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card p {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .stat-highlight {
+            color: #00ff88;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Quote Callout */
+        .quote-callout {
+            background: linear-gradient(135deg, rgba(0, 119, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .quote-callout h3 {
+            color: #00d4ff;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .quote-callout p {
+            color: #b0b0b0;
+            font-size: 1.3rem;
+            line-height: 1.7;
+        }
+
+        .quote-number {
+            color: #00ff88;
+            font-size: 4rem;
+            font-weight: 900;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0a0a;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 119, 255, 0.2);
+        }
+
+        footer p {
+            color: #666;
+            margin: 0.5rem 0;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #00d4ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #0077ff;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .container {
+                padding: 3rem 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .roi-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <img src="photos/GlowLabSigns_LOGO_Transparent_TIGHT.png" alt="Glow Lab Signs" class="header-logo">
+        <a href="index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="photos/GlowLabSigns_Bar_A.jpg" alt="Custom LED sign in retail space">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Impossible to Ignore</h1>
+            <p class="hero-subtitle">Turn Your Storefront Into a Landmark</p>
+            <p>80% of shoppers enter based on signage alone. Make yours 400% more visible than traditional signs. Drive foot traffic with LED art that becomes a destination.</p>
+            <a href="index.html#quote" class="cta-button">Design Your Storefront</a>
+        </div>
+    </section>
+
+    <!-- ROI Stats -->
+    <div class="container">
+        <div class="roi-stats">
+            <div class="roi-stat">
+                <span class="roi-stat-number">80%</span>
+                <span class="roi-stat-label">Enter Based on Signage</span>
+            </div>
+            <div class="roi-stat">
+                <span class="roi-stat-number">400%</span>
+                <span class="roi-stat-label">More Visible Than Traditional</span>
+            </div>
+            <div class="roi-stat">
+                <span class="roi-stat-number">40%</span>
+                <span class="roi-stat-label">Say Signage Influences Purchase</span>
+            </div>
+            <div class="roi-stat">
+                <span class="roi-stat-number">4-10</span>
+                <span class="roi-stat-label">Month Payback</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Introduction -->
+        <section class="section">
+            <h2 class="section-title">Stop Blending In</h2>
+            <p class="section-text" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                Your products are great. Your service is excellent. But in a sea of storefronts, generic signage makes you invisible. Custom LED signs don't just mark your location—they make you a destination people seek out.
+            </p>
+        </section>
+
+        <!-- Big Stats Callout -->
+        <div class="quote-callout">
+            <h3>The Signage Statistics That Matter</h3>
+            <span class="quote-number">80%</span>
+            <p>of customers enter a shop based on its signage</p>
+            <span class="quote-number" style="font-size: 3rem; margin-top: 2rem;">40%</span>
+            <p>say signage directly influences what they buy</p>
+            <p style="margin-top: 2rem; font-size: 1.1rem;">Your sign isn't decoration. <span class="stat-highlight">It's your #1 marketing tool.</span></p>
+        </div>
+
+        <!-- Benefits -->
+        <section class="section">
+            <h2 class="section-title">Why Retail & Commercial Choose Us</h2>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">👁️</div>
+                    <h3>400% More Visibility</h3>
+                    <p><span class="stat-highlight">LED signs deliver 400% more views</span> than traditional signage. Brighter, bolder, impossible to miss—even in crowded commercial districts.</p>
+                    <p>Stand out or get ignored. There's no middle ground.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📍</div>
+                    <h3>Become a Landmark</h3>
+                    <p>"Meet at that place with the cool LED sign." Your store becomes a reference point, a destination, a must-visit location.</p>
+                    <p>People don't give directions to generic stores. They remember YOU.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">📸</div>
+                    <h3>The Instagram Backdrop</h3>
+                    <p>Customers photograph your sign, tag your business, and share with thousands of followers. Free advertising that compounds daily.</p>
+                    <p>Every photo = brand awareness + social proof.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚶</div>
+                    <h3>Drive Foot Traffic</h3>
+                    <p>Eye-catching LED signs pull walk-by traffic inside. <span class="stat-highlight">Studies show 20%+ increases in foot traffic</span> with vibrant custom signage.</p>
+                    <p>More people in = more sales. Simple math.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">💎</div>
+                    <h3>Premium Positioning</h3>
+                    <p>Generic signage = generic store. Custom LED art = premium brand. Elevate perception and justify higher prices.</p>
+                    <p>First impressions happen at your storefront.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌈</div>
+                    <h3>Adapt to Any Season</h3>
+                    <p>Full RGB control means you match every holiday, sale, or event. Red for Valentine's. Orange for Halloween. Your brand colors always.</p>
+                    <p>One sign. Infinite flexibility.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perfect For Section -->
+        <section class="section">
+            <h2 class="section-title">Perfect For</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>☕ Coffee Shops & Cafes</h3>
+                    <p>Create that "third place" vibe with custom LED art. Become the Instagram-famous cafe everyone visits.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>💇 Salons & Spas</h3>
+                    <p>Sophisticated LED signage that reflects your premium services. Attract walk-ins with modern elegance.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>💪 Fitness Studios & Gyms</h3>
+                    <p>Motivational LED installations that embody your brand energy. Make your studio unmistakable from the street.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>👗 Boutiques & Retail</h3>
+                    <p>Stand out in competitive shopping districts. Your custom sign becomes part of your brand story.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🏢 Corporate Offices</h3>
+                    <p>Lobby installations that impress clients and inspire employees. Your brand, illuminated.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>🛍️ Showrooms</h3>
+                    <p>Automotive, furniture, design showrooms—create an experience that matches your premium products.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Section -->
+        <section class="section">
+            <h2 class="section-title">Built for Commercial Environments</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Commercial-Grade Quality</h3>
+                    <p>50,000+ hour LEDs. Weather-resistant options. Built to withstand high-traffic retail environments for 10+ years.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>Professional Installation</h3>
+                    <p>Licensed electricians handle mounting, wiring, and permits. We coordinate with building managers and landlords.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>Custom Brand Integration</h3>
+                    <p>Your logo. Your colors. Your font. Precision fabrication that matches your existing brand guidelines perfectly.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>Nationwide Service</h3>
+                    <p>From Manhattan to Venice Beach. We install anywhere through our network of trusted professional electricians.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>5-Year Warranty</h3>
+                    <p>Protected investment. Backed by warranty. Built to last through years of business growth.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>Fast Turnaround</h3>
+                    <p>8-10 weeks from design approval to installation. Plan around your grand opening or rebrand timeline.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process -->
+        <section class="section">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">From concept to installation</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>1. Brand Consultation</h3>
+                    <p>Share your brand guidelines, logo files, and storefront photos. We create custom mockups showing exactly how your sign looks installed.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>2. Precision Fabrication</h3>
+                    <p>Commercial-grade LEDs. Premium materials. Your sign is crafted to exact specifications for long-term durability.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <h3>3. Professional Installation</h3>
+                    <p>Licensed electricians coordinate permits, mounting, and wiring. We work around your business hours to minimize disruption.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="section" style="text-align: center;">
+            <h2 class="section-title">Ready to Stand Out?</h2>
+            <p class="section-subtitle">Start with a free brand consultation and custom storefront mockup</p>
+            <a href="index.html#quote" class="cta-button">Get Your Custom Quote</a>
+            <p class="section-text" style="margin-top: 2rem;">
+                <span class="stat-highlight">Average investment: $10,000-$25,000</span><br>
+                Typical payback: 4-10 months • 10+ year lifespan • 5-year warranty
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Glow Lab Signs. All rights reserved.</p>
+        <p>Professional installation included • Nationwide service</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="locations.html">Locations</a>
+            <a href="designers.html">Designer Partners</a>
+            <a href="mailto:hello@glowlabsigns.com">Contact</a>
+            <a href="https://instagram.com/glowlabsigns" target="_blank">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

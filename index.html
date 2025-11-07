@@ -90,6 +90,53 @@
             box-shadow: 0 10px 30px rgba(0, 119, 255, 0.4);
         }
 
+        /* Dropdown Navigation */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #1a1a2e;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            min-width: 200px;
+            margin-top: 0.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .dropdown-menu li {
+            list-style: none;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: #b0b0b0 !important;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-left-color: #00d4ff;
+            color: #00d4ff !important;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
         @media (max-width: 768px) {
             .nav-container {
                 flex-direction: column;
@@ -1018,11 +1065,28 @@
             margin-top: 3rem;
         }
 
+        .segment-card-link {
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .segment-card-link:hover {
+            transform: translateY(-5px);
+        }
+
         .segment-card {
             background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
             padding: 3rem;
             border-radius: 20px;
             border: 2px solid rgba(0, 119, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .segment-card-link:hover .segment-card {
+            border-color: #00d4ff;
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
         }
 
         .segment-card h3 {
@@ -1099,6 +1163,15 @@
                 <img src="photos/GlowLabSigns_LOGO_Transparent_TIGHT.png" alt="Glow Lab Signs">
             </div>
             <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">For You ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="restaurants.html">Restaurants & Bars</a></li>
+                        <li><a href="vacation-rentals.html">Vacation Rentals</a></li>
+                        <li><a href="commercial.html">Retail & Commercial</a></li>
+                        <li><a href="residential.html">Luxury Homes</a></li>
+                    </ul>
+                </li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#pricing">Pricing</a></li>
@@ -1115,9 +1188,9 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Investment-Grade Art That Pays For Itself</h1>
-            <p class="hero-subtitle">Custom Light Installations That Drive Revenue, Not Just Ambiance</p>
-            <p>Premium fabrication partners. Expert design. Professional installation nationwide.</p>
+            <h1>Custom LED Art That Transforms Spaces</h1>
+            <p class="hero-subtitle">The Only Piece Your Guests Will Actually Remember</p>
+            <p>Premium fabrication. Expert design. Professional installation nationwide.</p>
             <div class="hero-buttons">
                 <a href="#quote" class="cta-button">Get Custom Quote</a>
                 <a href="#gallery" class="cta-button cta-button-secondary">See Our Work</a>
@@ -1129,20 +1202,20 @@
     <section class="stats-bar">
         <div class="stats-container">
             <div class="stat">
-                <span class="stat-number">2-6</span>
-                <span class="stat-label">Month Payback Period</span>
+                <span class="stat-number">50K+</span>
+                <span class="stat-label">LED Hours Rated</span>
             </div>
             <div class="stat">
-                <span class="stat-number">400%</span>
-                <span class="stat-label">More Views vs Traditional</span>
+                <span class="stat-number">Full RGB</span>
+                <span class="stat-label">16+ Million Colors</span>
             </div>
             <div class="stat">
                 <span class="stat-number">10</span>
                 <span class="stat-label">Year Lifespan</span>
             </div>
             <div class="stat">
-                <span class="stat-number">24/7</span>
-                <span class="stat-label">Marketing Employee</span>
+                <span class="stat-number">Nationwide</span>
+                <span class="stat-label">Professional Installation</span>
             </div>
         </div>
     </section>
@@ -1173,38 +1246,38 @@
     <section class="roi-section">
         <div class="roi-container">
             <div class="roi-header">
-                <h2>The Installation That Markets Itself</h2>
-                <p class="roi-tagline">Turn Light Into Revenue</p>
-                <p>Our custom LED installations aren't expenses—they're revenue generators. Watch your Instagram engagement explode. See your prices rise. Feel your brand become unforgettable.</p>
+                <h2>Why Custom LED Art?</h2>
+                <p class="roi-tagline">More Than Just Beautiful</p>
+                <p>Our custom LED installations create unforgettable moments. Whether you're building a business that stands out or creating a home that defines you, these pieces become the centerpiece everyone talks about.</p>
             </div>
 
             <div class="roi-benefits-grid">
                 <div class="roi-benefit-card">
-                    <div class="roi-benefit-icon">📸</div>
-                    <h3>Social Media Magnet</h3>
-                    <p>Every customer becomes your marketing team. Our installations create that "must-photograph" moment that ends up on thousands of Instagram feeds.</p>
-                    <p><span class="roi-stat-highlight">60% engagement increase</span> when venues add Instagram-worthy features. Your installation isn't an expense—it's a 24/7 marketing employee.</p>
+                    <div class="roi-benefit-icon">✨</div>
+                    <h3>Unforgettable Impact</h3>
+                    <p>The only piece of art your guests will ask about. Create that "must-photograph" moment that becomes your signature.</p>
+                    <p>From home bars to restaurant walls, these installations become the talking point everyone remembers.</p>
                 </div>
 
                 <div class="roi-benefit-card">
-                    <div class="roi-benefit-icon">💰</div>
-                    <h3>Premium Pricing Power</h3>
-                    <p>Research shows diners pay <span class="roi-stat-highlight">$39 more at Instagram-worthy venues</span>. You're not just selling food or lodging—you're selling an experience worth sharing.</p>
-                    <p>Create premium atmosphere justifying 15-20% higher prices with memorable moments that drive 5-star reviews.</p>
+                    <div class="roi-benefit-icon">🎨</div>
+                    <h3>Fully Custom Design</h3>
+                    <p>Your vision, perfectly realized. From elegant script to bold lettering, every detail is tailored to your space and style.</p>
+                    <p><span class="roi-stat-highlight">Full RGB color control</span> means your installation adapts to any mood, season, or event.</p>
                 </div>
 
                 <div class="roi-benefit-card">
-                    <div class="roi-benefit-icon">🎯</div>
-                    <h3>Instant Recognition</h3>
-                    <p><span class="roi-stat-highlight">80% of customers enter shops based on signage</span>; 40% say it influences purchases.</p>
-                    <p>Custom LED installations deliver 400% more views than traditional signage. Be THE place everyone talks about. The one with the incredible art.</p>
+                    <div class="roi-benefit-icon">💎</div>
+                    <h3>Premium Quality</h3>
+                    <p>Commercial-grade components built to last. <span class="roi-stat-highlight">50,000+ hour LED lifespan</span> with 10-year warranty coverage.</p>
+                    <p>Professional installation by licensed electricians. White-glove service from concept to completion.</p>
                 </div>
 
                 <div class="roi-benefit-card">
                     <div class="roi-benefit-icon">📈</div>
-                    <h3>Measurable ROI</h3>
-                    <p>Venues report <span class="roi-stat-highlight">20% average increase in foot traffic</span> with vibrant custom installations.</p>
-                    <p>Track Instagram tags, monitor foot traffic, watch revenue climb. Most clients see payback in 2-6 months.</p>
+                    <h3>Smart Investment</h3>
+                    <p>For businesses: proven ROI with <span class="roi-stat-highlight">20% average foot traffic increase</span> and social media buzz.</p>
+                    <p>For homes: the perfect gift for people who have everything. Art that defines your space.</p>
                 </div>
             </div>
         </div>
@@ -1213,73 +1286,81 @@
     <!-- Segment-Specific ROI -->
     <section class="segments-section">
         <div class="segments-container">
-            <h2 class="section-title">Built For Your Business</h2>
-            <p class="section-subtitle">Proven ROI across industries</p>
+            <h2 class="section-title">Who We Serve</h2>
+            <p class="section-subtitle">Custom installations for every space</p>
 
             <div class="segments-grid">
-                <div class="segment-card">
-                    <h3>🍽️ Restaurants & Bars</h3>
-                    <h4>Turn Tables Faster, Charge More</h4>
-                    <p>Stop competing on price. Start commanding premiums. Our installations transform ordinary dining into Instagram-worthy experiences that justify higher menu prices.</p>
-                    <ul>
-                        <li>Every guest becomes a photographer</li>
-                        <li>Every photo becomes free advertising</li>
-                        <li>Average 100 photos/week = 30,000+ organic impressions</li>
-                        <li>Cost per impression: $0.02 vs $20+ for paid ads</li>
-                    </ul>
-                    <div class="roi-payback">
-                        <strong>Typical Payback: 2-6 months</strong><br>
-                        <span style="color: #b0b0b0;">Based on 20% traffic increase + social media value</span>
+                <a href="restaurants.html" class="segment-card-link">
+                    <div class="segment-card">
+                        <h3>🍽️ Restaurants & Bars</h3>
+                        <h4>Turn Tables Faster, Charge More</h4>
+                        <p>Stop competing on price. Start commanding premiums. Our installations transform ordinary dining into Instagram-worthy experiences that justify higher menu prices.</p>
+                        <ul>
+                            <li>Every guest becomes a photographer</li>
+                            <li>Every photo becomes free advertising</li>
+                            <li>Average 100 photos/week = 30,000+ organic impressions</li>
+                            <li>Cost per impression: $0.02 vs $20+ for paid ads</li>
+                        </ul>
+                        <div class="roi-payback">
+                            <strong>Typical Payback: 2-6 months</strong><br>
+                            <span style="color: #b0b0b0;">Based on 20% traffic increase + social media value</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="segment-card">
-                    <h3>🏡 Airbnb & Vacation Rentals</h3>
-                    <h4>The Property Guests Remember</h4>
-                    <p>Your competition has nice furniture. You'll have 1,000 guest selfies driving bookings. Make your property THE one guests talk about.</p>
-                    <ul>
-                        <li>The hero shot that gets clicks on listings</li>
-                        <li>The selfie spot every guest photographs</li>
-                        <li>Unique features command $50-100/night premium</li>
-                        <li>7% average booking increase with standout features</li>
-                    </ul>
-                    <div class="roi-payback">
-                        <strong>Typical Payback: 3-8 months</strong><br>
-                        <span style="color: #b0b0b0;">On a $400/night property, that's $10,000+ extra annually</span>
+                <a href="vacation-rentals.html" class="segment-card-link">
+                    <div class="segment-card">
+                        <h3>🏡 Airbnb & Vacation Rentals</h3>
+                        <h4>The Property Guests Remember</h4>
+                        <p>Your competition has nice furniture. You'll have 1,000 guest selfies driving bookings. Make your property THE one guests talk about.</p>
+                        <ul>
+                            <li>The hero shot that gets clicks on listings</li>
+                            <li>The selfie spot every guest photographs</li>
+                            <li>Unique features command $50-100/night premium</li>
+                            <li>7% average booking increase with standout features</li>
+                        </ul>
+                        <div class="roi-payback">
+                            <strong>Typical Payback: 3-8 months</strong><br>
+                            <span style="color: #b0b0b0;">On a $400/night property, that's $10,000+ extra annually</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="segment-card">
-                    <h3>🛍️ Retail & Commercial</h3>
-                    <h4>Impossible to Ignore</h4>
-                    <p>80% of shoppers enter based on signage alone. Make yours a destination, not just a store.</p>
-                    <ul>
-                        <li>400% more views than traditional signage</li>
-                        <li>Become the Instagram backdrop everyone seeks out</li>
-                        <li>Turn your storefront into a landmark</li>
-                        <li>Drive foot traffic with viral-worthy installations</li>
-                    </ul>
-                    <div class="roi-payback">
-                        <strong>Typical Payback: 4-10 months</strong><br>
-                        <span style="color: #b0b0b0;">10-year lifespan means years of returns</span>
+                <a href="commercial.html" class="segment-card-link">
+                    <div class="segment-card">
+                        <h3>🛍️ Retail & Commercial</h3>
+                        <h4>Impossible to Ignore</h4>
+                        <p>80% of shoppers enter based on signage alone. Make yours a destination, not just a store.</p>
+                        <ul>
+                            <li>400% more views than traditional signage</li>
+                            <li>Become the Instagram backdrop everyone seeks out</li>
+                            <li>Turn your storefront into a landmark</li>
+                            <li>Drive foot traffic with viral-worthy installations</li>
+                        </ul>
+                        <div class="roi-payback">
+                            <strong>Typical Payback: 4-10 months</strong><br>
+                            <span style="color: #b0b0b0;">10-year lifespan means years of returns</span>
+                        </div>
                     </div>
-                </div>
+                </a>
 
-                <div class="segment-card">
-                    <h3>🏠 Luxury Homes & Estates</h3>
-                    <h4>Art That Defines Your Space</h4>
-                    <p>Make a statement that's uniquely yours. Custom LED art that becomes the centerpiece everyone remembers.</p>
-                    <ul>
-                        <li>The only art your guests want selfies with</li>
-                        <li>Turn your home bar, game room, or entry into a destination</li>
-                        <li>Perfect for impossible-to-shop-for spouses and partners</li>
-                        <li>Create an instantly recognizable signature space</li>
-                    </ul>
-                    <div class="roi-payback">
-                        <strong>Built to Last: 10+ years</strong><br>
-                        <span style="color: #b0b0b0;">Premium quality, lifetime memories</span>
+                <a href="residential.html" class="segment-card-link">
+                    <div class="segment-card">
+                        <h3>🏠 Luxury Homes & Estates</h3>
+                        <h4>Art That Defines Your Space</h4>
+                        <p>Make a statement that's uniquely yours. Custom LED art that becomes the centerpiece everyone remembers.</p>
+                        <ul>
+                            <li>The only art your guests want selfies with</li>
+                            <li>Turn your home bar, game room, or entry into a destination</li>
+                            <li>Perfect for impossible-to-shop-for spouses and partners</li>
+                            <li>Create an instantly recognizable signature space</li>
+                        </ul>
+                        <div class="roi-payback">
+                            <strong>Built to Last: 10+ years</strong><br>
+                            <span style="color: #b0b0b0;">Premium quality, lifetime memories</span>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>

@@ -137,24 +137,139 @@
             display: block;
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #00d4ff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .mobile-cta {
+            display: none;
+        }
+
         @media (max-width: 768px) {
+            nav {
+                padding: 0.75rem 1rem;
+            }
+
             .nav-container {
-                flex-direction: column;
-                gap: 1rem;
+                flex-direction: row;
+                gap: 0;
             }
 
             .nav-logo {
-                height: 40px;
+                height: 35px;
+                flex: 0 0 auto;
+            }
+
+            .mobile-cta {
+                display: block;
+                flex: 1;
+                text-align: center;
+            }
+
+            .mobile-cta a {
+                padding: 0.5rem 1.2rem;
+                background: linear-gradient(135deg, #0077ff, #00d4ff);
+                color: #fff;
+                text-decoration: none;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                display: inline-block;
+            }
+
+            .hamburger {
+                display: flex;
+                flex: 0 0 auto;
             }
 
             .nav-links {
-                gap: 0.8rem;
-                flex-wrap: wrap;
-                justify-content: center;
+                display: none;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+                max-height: calc(100vh - 60px);
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
             }
 
             .nav-links a {
-                font-size: 0.85rem;
+                display: block;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+                border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+            }
+
+            .nav-links a.nav-cta {
+                display: none;
+            }
+
+            .dropdown-menu {
+                position: static;
+                display: none;
+                background: rgba(0, 0, 0, 0.5);
+                border: none;
+                border-radius: 0;
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-toggle::after {
+                content: ' ▾';
+                font-size: 0.8rem;
+            }
+
+            .dropdown.active .dropdown-toggle::after {
+                content: ' ▴';
+            }
+
+            .dropdown-menu a {
+                padding: 0.75rem 2.5rem;
+                border-left: none;
             }
         }
 
@@ -1162,9 +1277,17 @@
             <div class="nav-logo">
                 <img src="photos/GlowLabSigns_LOGO_Transparent_TIGHT.png" alt="Glow Lab Signs">
             </div>
+            <div class="mobile-cta">
+                <a href="#quote">Get Quote</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul class="nav-links">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">For You ▾</a>
+                    <a href="#" class="dropdown-toggle">For You</a>
                     <ul class="dropdown-menu">
                         <li><a href="restaurants.html">Restaurants & Bars</a></li>
                         <li><a href="vacation-rentals.html">Vacation Rentals</a></li>
@@ -1293,7 +1416,7 @@
                 <a href="restaurants.html" class="segment-card-link">
                     <div class="segment-card">
                         <h3>🍽️ Restaurants & Bars</h3>
-                        <h4>Turn Tables Faster, Charge More</h4>
+                        <h4>Unlock Viral Social Media</h4>
                         <p>Stop competing on price. Start commanding premiums. Our installations transform ordinary dining into Instagram-worthy experiences that justify higher menu prices.</p>
                         <ul>
                             <li>Every guest becomes a photographer</li>
@@ -1779,6 +1902,36 @@
     </footer>
 
     <script>
+        // Hamburger Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Mobile dropdown toggle
+        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    const dropdown = toggle.parentElement;
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Close menu when clicking on a link (except dropdown toggle)
+        document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
